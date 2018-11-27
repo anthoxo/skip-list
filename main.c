@@ -9,5 +9,7 @@ int main(int argc, char const *argv[]) {
         pushLinkedList(i, &t);
     }
     printLinkedList(t);
+    removeLinkedList(3, &t);
+    printLinkedList(t);
     return 0;
 }

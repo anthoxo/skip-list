@@ -18,6 +18,49 @@ void pushLinkedList(int d, linked_list *l) {
     *l = result;
 }
 
+void removeLinkedList(int d, linked_list *l) {
+    if (l != NULL) {
+        if ((*l)->data == d) {
+            *l = (*l)->next;
+        } else if ((*l)->next == NULL) {
+
+        } else {
+            linked_list *previous = l;
+            linked_list *point = &((*l)->next);
+            int boolean = 1;
+            int alreadyFind = 0;
+            while(boolean) {
+                if ((*point)->data == d && alreadyFind == 0) {
+                    printf("b + %d\n", (*point)->data);
+                    alreadyFind = 1;
+                    (*previous)->next = (*point)->next;
+                } else {
+
+                }
+                if ((*point)->next == NULL) {
+                    boolean = 0;
+                } else {
+                    previous = point;
+                    point = &((*point)->next);
+                }
+            }
+        } 
+    }
+}
+
+int findLinkedList(int d, linked_list l) {
+    int result = 0;
+    while (l->next == NULL) {
+        if (l->data == d) {
+            result = 1;
+        }
+    }
+    if (l->data == d) {
+        result = 1;
+    }
+    return result;
+}
+
 void printLinkedList(linked_list l) {
     linked_list tmp = l;
     while (tmp->next != NULL) {
