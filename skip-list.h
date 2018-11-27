@@ -6,7 +6,7 @@ typedef struct t_linked_list *linked_list;
 
 linked_list initLinkedList();
 void pushLinkedList(int d, linked_list *l);
-void removeLinkedList(int d, linked_list *l);
+int removeLinkedList(int d, linked_list *l);
 int findLinkedList(int d, linked_list l);
 void printLinkedList(linked_list l);
 
